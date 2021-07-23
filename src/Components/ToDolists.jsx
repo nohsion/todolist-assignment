@@ -3,6 +3,10 @@ import PropTypes from "prop-types"
 import { Button, Card, CardTitle, CardText, Container } from "reactstrap"
 
 const ToDOLists = ({ data, deleteToDo, upDateToDO }) => {
+  const handleOnClick = id => e => {
+    deleteToDo(id)
+  }
+
   return (
     <Container>
       <div
@@ -17,7 +21,7 @@ const ToDOLists = ({ data, deleteToDo, upDateToDO }) => {
             <CardTitle tag="h5">{v.title}</CardTitle>
             <CardText>{v.description}</CardText>
             <div style={{ display: "flex", justifyContent: "space-around" }}>
-              <Button color="secondary" id={v.id} onClick={deleteToDo}>
+              <Button color="secondary" onClick={handleOnClick(v.id)}>
                 Delete
               </Button>
               <Button color="secondary" id={v.id}>

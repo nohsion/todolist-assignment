@@ -25,11 +25,13 @@ const Header = ({ addToDo }) => {
 
   const handleKeyPress = event => {
     if (event.code === "Enter") {
-      addToDo({
-        id: Date.now(),
-        title: title,
-        description: description
-      })
+      if (title && description) {
+        addToDo({
+          id: Date.now(),
+          title: title,
+          description: description
+        })
+      }
     }
   }
 
@@ -56,11 +58,17 @@ const Header = ({ addToDo }) => {
       </Jumbotron>
       <InputGroup>
         <InputGroupAddon addonType="prepend"></InputGroupAddon>
-        <Input placeholder="Title" value={title} onChange={onChangeTitle} />
+        <Input
+          placeholder="Title"
+          value={title}
+          onChange={onChangeTitle}
+          valid={title.length > 0 ? true : false}
+        />
         <Input
           placeholder="Description"
           value={description}
           onChange={onChangeDescription}
+          valid={description.length > 0 ? true : false}
         />
       </InputGroup>
     </div>
