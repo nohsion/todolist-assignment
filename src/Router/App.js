@@ -23,17 +23,15 @@ function App() {
   ])
 
   const addToDo = data => {
-    //setToDos([...toDos, data])
+    setToDos([...toDos, data])
   }
 
   const deleteToDo = id => {
     const deleteToDos = toDos.filter(item => item.id !== id)
-    setToDos([...deleteToDos])
+    setToDos(deleteToDos)
   }
 
-  const upDateToDo = id => {
-    return
-  }
+  const upDateToDo = (id, data) => {}
 
   return (
     <>

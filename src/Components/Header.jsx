@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react"
+import React, { useEffect, useState } from "react"
 import {
   Button,
   Input,
@@ -24,6 +24,7 @@ const Header = ({ addToDo }) => {
   }
 
   const handleKeyPress = event => {
+    console.log(event)
     if (event.code === "Enter") {
       if (title && description) {
         addToDo({
@@ -49,7 +50,6 @@ const Header = ({ addToDo }) => {
         <h1 className="display-3">내 손으로 만들어보는 일정 관리 앱</h1>
         <p className="lead">일정 관리 앱을 통해 컴포넌트 상태 컨트롤</p>
         <hr className="my-2" />
-        <p>CRUD 작업을 통해서 한 번 배워보자고 친구들 ㅎㅎ</p>
         <p className="lead">
           <Button color="primary" onClick={onClickBtn}>
             소스코드 확인

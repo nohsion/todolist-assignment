@@ -2,7 +2,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import { Button, Card, CardTitle, CardText, Container } from "reactstrap"
 
-const ToDOLists = ({ data, deleteToDo, upDateToDO }) => {
+const ToDOLists = ({ data, deleteToDo, upDateToDo }) => {
   const handleOnClick = id => e => {
     deleteToDo(id)
   }
@@ -24,9 +24,7 @@ const ToDOLists = ({ data, deleteToDo, upDateToDO }) => {
               <Button color="secondary" onClick={handleOnClick(v.id)}>
                 Delete
               </Button>
-              <Button color="secondary" id={v.id}>
-                Update
-              </Button>
+              <Button color="secondary">Update</Button>
             </div>
           </Card>
         ))}
